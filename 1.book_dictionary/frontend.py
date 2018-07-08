@@ -18,7 +18,11 @@ def update():
 def delete():
 	pass
 def close():
-	messagebox.askyesno('Exit confirmation dialogue box','Are you sure want to close')
+	result=messagebox.askyesno('Exit confirmation dialogue box','Are you sure want to close')
+	if result==True:
+		sys.exit()
+	else:
+		pass	
 #######################################################	
 
 #window configuration
