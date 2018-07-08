@@ -20,6 +20,7 @@ def delete():
 def close():
 	result=messagebox.askyesno('Exit confirmation dialogue box','Are you sure want to close')
 	if result==True:
+		db.close()
 		sys.exit()
 	else:
 		pass	
