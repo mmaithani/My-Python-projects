@@ -8,7 +8,7 @@ import sys
 #########################- Button commands -################################################
 
 def view_all():
-	# main_list.(INSERT,'')
+	
 	pass	
 def search():	
 	pass
@@ -58,6 +58,7 @@ Label(window,text="Title\t").grid(row=0,column=0)
 
 title_entry=Entry(window)
 title_entry.grid(row=0,column=1)
+title=title_entry.get()
 
 Label(window,text="Author").grid(row=0,column=2)
 
