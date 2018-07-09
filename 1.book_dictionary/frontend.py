@@ -1,13 +1,14 @@
 import tkinter as tk  #assigning tkinter a small name-tk for writeability
+import backend
 from tkinter import *
 from tkinter import scrolledtext
 from tkinter import messagebox
 import numpy as np   #similary importing numpy as np (renaming)
 import sys
-
-#############- Button commands -##################
+#########################- Button commands -################################################
 
 def view_all():
+	# main_list.(INSERT,'')
 	pass	
 def search():	
 	pass
@@ -17,14 +18,27 @@ def update():
 	pass
 def delete():
 	pass
-def close():
+def close():	
 	result=messagebox.askyesno('Exit confirmation dialogue box','Are you sure want to close')
 	if result==True:
-		db.close()
 		sys.exit()
 	else:
 		pass	
-#######################################################	
+def match():
+	pass
+########################################################################################################	
+# login=tk.Tk()
+# login.title("Database login", font=('arial', 15))
+# login.geometry('230x150')
+# Label(login,text="Enter here").grid(sticky=E)
+# Label(login,text="Username\t").grid(row=1,column=0)
+# Label(login,text="Password\t").grid(row=2,column=0)
+# username_entry=Entry(login).grid(row=1,column=1)
+# password_entry=Entry(login,show='*').grid(row=2,column=1)
+# login_bt=tk.Button(login,text="\tlogin \t",bg='powder blue',command=match)
+# login_bt.grid(row=4,column=1)
+
+############################################################################################################
 
 #window configuration
 window=tk.Tk()
@@ -38,7 +52,7 @@ upframe.place()
 
 downframe=Frame(window)
 downframe.place(x=10,y=50)
-######################################################################
+##############################-Label and Entries-##########################################################
 
 Label(window,text="Title\t").grid(row=0,column=0)
 
@@ -60,12 +74,13 @@ author_entry=Entry(window)
 author_entry.grid(row=1,column=3)
 
 
-# from tkinter import scrolledtext+9
+# from tkinter import scrolledtext
 main_list=scrolledtext.ScrolledText(downframe,width=21,height=10)
 main_list.grid(row=4,column=0)
 # main_list.insert(INSERT,'Hi !')
 # main_list.delete(1.0,END)
-#########################= Buttons layout -#############################
+
+#########################= Buttons layout -################################################
 view_all_bt=tk.Button(window,text='View All',width=15,command=view_all)
 view_all_bt.grid(row=3,column=3)
 
