@@ -1,19 +1,40 @@
 import tkinter as tk  #assigning tkinter a small name-tk for writeability
-import backend
+# from backend import * 
 from tkinter import *
 from tkinter import scrolledtext
 from tkinter import messagebox
 import numpy as np   #similary importing numpy as np (renaming)
 import sys
-#########################- Button commands -################################################
+import pymysql as py
+# from frontend import *
+#----------Taking databse username and password-------------
+data=open("database_pass.txt","r")
+username=data.readline() 
+password=data.readline()
 
-def view_all():
+#----------open database connection---------------------------
+db=py.connect("localhost","root",password,"book_dic")
+
+#--------prepare a cursor object using cursor() method----------
+cursor=db.cursor()
 	
-	pass	
+#########################- Button commands -################################################
+def view_all():
+	cursor.execute("select * from book")
+	result=cursor.fetchall()
+
+	main_list.insert(INSERT,result)
+
 def search():	
 	pass
 def add():
-	pass
+	# titl=title_entry.get()
+	# auth=author_entry.get()
+	# isb=isbn_entry.get()
+	# year=year_entry.get()
+	# cursor.execute("insert into book (title,year,ISBN,author)values('+titl+','+year+','+isb+','+auth+')")
+	cursor.execute("insert into book(title,year,ISBN,author)values('dfj','65','5','eee')")
+
 def update():
 	pass
 def delete():
@@ -40,13 +61,13 @@ def match():
 
 ############################################################################################################
 
-#window configuration
+#----------------window configuration------------
 window=tk.Tk()
 window.title("Book Dictionary")
 window.geometry('350x250')
 window.resizable(width=FALSE,height=FALSE)
 
-#frames configuration
+#----------------frames configuration----------------
 upframe=Frame(window)
 upframe.place()
 
@@ -66,13 +87,13 @@ author_entry=Entry(window)
 author_entry.grid(row=0,column=3)
 
 Label(window,text="Year\t").grid(row=1,column=0)
-title_entry=Entry(window)
-title_entry.grid(row=1,column=1)
+year_entry=Entry(window)
+year_entry.grid(row=1,column=1)
 
 Label(window,text="ISBN").grid(row=1,column=2)
 
-author_entry=Entry(window)
-author_entry.grid(row=1,column=3)
+isbn_entry=Entry(window)
+isbn_entry.grid(row=1,column=3)
 
 
 # from tkinter import scrolledtext

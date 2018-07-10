@@ -25,16 +25,15 @@ def Database():
     
 def Login(event=None):
     Database()
-
-
+    global login
     if USERNAME.get() == "" or PASSWORD.get() == "":
         lbl_text.config(text="Please complete the required field!", fg="red")
     else:
         cursor.execute("SELECT * FROM `member` WHERE `username` = ? AND `password` = ?", (USERNAME.get(), PASSWORD.get()))
         if cursor.fetchone() is not None:
-            HomeWindow()
+            # HomeWindow()            
             import frontend
-
+            # root.withdraw()
             USERNAME.set("")
             PASSWORD.set("")
             lbl_text.config(text="")
@@ -42,6 +41,7 @@ def Login(event=None):
             lbl_text.config(text="Invalid username or password", fg="red")
             USERNAME.set("")
             PASSWORD.set("")   
+    root.withdraw()
     cursor.close()
     conn.close()
 

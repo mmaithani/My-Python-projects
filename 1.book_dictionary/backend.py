@@ -1,5 +1,5 @@
 import pymysql as py
-
+# from frontend import *
 #----------Taking databse username and password-------------
 data=open("database_pass.txt","r")
 username=data.readline() 
@@ -13,19 +13,3 @@ cursor=db.cursor()
 
 #########################- Button commands -################################################
 
-def view_all():
-	cursor.execute("select * from book")
-	result=cursor.fetchall()
-def search():	
-	pass
-def add():
-	pass
-def update():
-	pass
-def delete():
-	pass
-
-add
-
-#disconnect from server
-db.close()
