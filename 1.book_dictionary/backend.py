@@ -1,29 +1,98 @@
-import pymysql as py
-from tkinter import *
 import sqlite3
-# from frontend import *
-#----------Taking databse username and password-------------
-data=open("database_pass.txt","r")
-username=data.readline() 
-password=data.readline()
 
-#---------------open database connection---------------------db = conn_obj
-db=py.connect("localhost","root",password,"book_dic")      #cursor_obj=cursor
+def connect():
+    """Set up a connection with the database."""
+    conn_obj = sqlite3.connect("books.db")
+    cur_obj = conn_obj.cursor()
+    cur_obj.execute("CREATE TABLE IF NOT EXISTS "
+                    "book (id integer PRIMARY KEY, "
+                            "title text, "
+                            "author text, "
+                            "year integer, "
+                            "isbn integer)")
+    conn_obj.commit()
+    conn_obj.close()
 
-#--------prepare a cursor object using cursor() method----------
-cursor=db.cursor()
+def insert(title, author, year, isbn):
+    """Insert entry into database."""
+    conn_obj = sqlite3.connect("books.db")
+    cur_obj = conn_obj.cursor()
+    cur_obj.execute("INSERT INTO book "
+                    "VALUES (NULL, ?, ?, ?, ?)", (title, author, year, isbn))
+    conn_obj.commit()
+    conn_obj.close()
+
+def view():
+    """View all database entries."""
+    conn_obj = sqlite3.connect("books.db")
+    cur_obj = conn_obj.cursor()
+    cur_obj.execute("SELECT * FROM book")
+    rows = cur_obj.fetchall()
+    conn_obj.close()
+    return rows
+
+def update(id, title, author, year, isbn):
+    """Update a database entry."""
+    conn_obj = sqlite3.connect("books.db")
+    cur_obj = conn_obj.cursor()
+    cur_obj.execute("UPDATE book "
+                    "SET title = ?, "
+                    "author = ?, "
+                    "year = ?, "
+                    "isbn = ? "
+                    "WHERE id = ?", 
+                    (title, author, year, isbn, id))
+    conn_obj.commit()
+    conn_obj.close()
+
+def delete(id):
+    """Delete a database entry."""
+    conn_obj = sqlite3.connect("books.db")
+    cur_obj = conn_obj.cursor()
+    cur_obj.execute("DELETE FROM book "
+                    "WHERE id = ?", (id,))
+    conn_obj.commit()
+    conn_obj.close()
+
+def search(title = "", author = "", year = "", isbn = ""):
+    """Search for a database entry."""
+    conn_obj = sqlite3.connect("books.db")
+    cur_obj = conn_obj.cursor()
+    cur_obj.execute("SELECT * "
+                    "FROM book "
+                    "WHERE title = ? OR author = ? OR year = ? OR isbn = ?", 
+                    (title, author, year, isbn))
+    rows = cur_obj.fetchall()
+    conn_obj.close()
+    return rows
+    
+connect()
+# import pymysql as py
+# from tkinter import *
+# import sqlite3
+# # from frontend import *
+# #----------Taking databse username and password-------------
+# data=open("database_pass.txt","r")
+# username=data.readline() 
+# password=data.readline()
+
+# #---------------open database connection---------------------db = conn_obj
+# db=py.connect("localhost","root",password,"book_dic")      #cursor_obj=cursor
+
+# #--------prepare a cursor object using cursor() method----------
+# cursor=db.cursor()
 	
-#########################- Button commands -################################################
-def view_alll():
-	db=sqlite3.connect("book_dic.db")
-	cursor=db.cursor()
-	cursor.execute("select * from book")
-	row=cursor.fetchall()
-	db.close()
-	return row
+# #########################- Button commands -################################################
+# def view_alll():
+# 	db=sqlite3.connect("book_dic")
+# 	cursor=db.cursor()
+# 	cursor.execute("select * from book")
+# 	row=cursor.fetchall()
+# 	db.close()
+# 	return row
 	
 
-# def add():
-# 	cursor.execute("insert into book (title,year,ISBN,author)values( 'title_entry.get()','year_entry.get()','isbn_entry.get()','author_entry.get()')
-# 	db.commit()
-# 	cursor.execute("insert into book(title,year,ISBN,author)values('dfj','65','5','eee')")
+# # def add():
+# # 	cursor.execute("insert into book (title,year,ISBN,author)values( 'title_entry.get()','year_entry.get()','isbn_entry.get()','author_entry.get()')
+# # 	db.commit()
+# # 	cursor.execute("insert into book(title,year,ISBN,author)values('dfj','65','5','eee')")
