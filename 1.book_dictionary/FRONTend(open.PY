@@ -59,10 +59,15 @@ def get_selected_row(event):
     entry4.delete(0, END)
     entry4.insert(END, selected_tuple[4])
 
+#window configuration
 window = Tk()
 
 window.wm_title("Book Directory")
 window.configure(background="#a1dbcd")
+window.wm_iconbitmap('book.ico')
+photo=PhotoImage(file="book.gif")
+w=Label(window,image=photo)
+w.grid(row=5,column=0)
 # Labels for entry fields.
 label1 = Label(window, text = "Title",fg="#383a39",bg="#a1dbcd",font=("Helvetica",16))
 label1.grid(row = 0, column = 0)
