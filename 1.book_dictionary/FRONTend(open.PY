@@ -57,23 +57,23 @@ def get_selected_row(event):
     entry3.insert(END, selected_tuple[3])
 
     entry4.delete(0, END)
-    entry4.insert(END, selected_tuple[4])ss
+    entry4.insert(END, selected_tuple[4])
 
 window = Tk()
 
 window.wm_title("Book Directory")
-
+window.configure(background="#a1dbcd")
 # Labels for entry fields.
-label1 = Label(window, text = "Title")
+label1 = Label(window, text = "Title",fg="#383a39",bg="#a1dbcd",font=("Helvetica",16))
 label1.grid(row = 0, column = 0)
 
-label2 = Label(window, text = "Author")
+label2 = Label(window, text = "Author",fg="#383a39",bg="#a1dbcd",font=("Helvetica",16))
 label2.grid(row = 0, column = 2)
 
-label3 = Label(window, text = "Year")
+label3 = Label(window, text = "Year",fg="#383a39",bg="#a1dbcd",font=("Helvetica",16))
 label3.grid(row = 1, column = 0)
 
-label4 = Label(window, text = "ISBN")
+label4 = Label(window, text = "ISBN",fg="#383a39",bg="#a1dbcd",font=("Helvetica",16))
 label4.grid(row = 1, column = 2)
 
 # Entry Fields.
@@ -111,37 +111,37 @@ listing.bind('<<ListboxSelect>>', get_selected_row)
 button1 = Button(window, 
                 text = "View All", 
                 width = 12, 
-                command = view_command)
+                command = view_command,fg="#a1dbcd",bg="#383a39")
 button1.grid(row = 2, column = 3)
 
 button2 = Button(window, 
                 text = "Search Entry", 
                 width = 12, 
-                command = search_command)
+                command = search_command,fg="#a1dbcd",bg="#383a39")
 button2.grid(row = 3, column = 3)
 
 button3 = Button(window, 
                 text = "Add Entry", 
                 width = 12, 
-                command = add_command)
+                command = add_command,fg="#a1dbcd",bg="#383a39")
 button3.grid(row = 4, column = 3)
 
 button4 = Button(window, 
                 text = "Update Selected", 
                 width = 12, 
-                command = update_command)
+                command = update_command,fg="#a1dbcd",bg="#383a39")
 button4.grid(row = 5, column = 3)
 
 button5 = Button(window, 
                 text = "Delete Selected", 
                 width = 12, 
-                command = delete_command)
+                command = delete_command,fg="#a1dbcd",bg="#383a39")
 button5.grid(row = 6, column = 3)
 
 button6 = Button(window, 
                 text = "Close", 
                 width = 12, 
-                command = window.destroy)
+                command = window.destroy,fg="#a1dbcd",bg="#383a39")
 button6.grid(row = 7, column = 3)
 
 # Keep window open until closed.
