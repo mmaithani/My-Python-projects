@@ -64,10 +64,10 @@ window = Tk()
 
 window.wm_title("Book Directory")
 window.configure(background="#a1dbcd")
-window.wm_iconbitmap('book.ico')
-photo=PhotoImage(file="book.gif")
-w=Label(window,image=photo)
-w.grid(row=5,column=0)
+window.wm_iconbitmap('icon.ico')
+# photo=PhotoImage(file="banner.gif")
+# w=Label(window,image=photo)
+# w.grid(row=6,column=0)
 # Labels for entry fields.
 label1 = Label(window, text = "Title",fg="#383a39",bg="#a1dbcd",font=("Helvetica",16))
 label1.grid(row = 0, column = 0)
@@ -132,7 +132,6 @@ button3 = Button(window,
 button3.grid(row = 4, column = 3)
 
 button4 = Button(window, 
-                text = "Update Selected", 
                 width = 12, 
                 command = update_command,fg="#a1dbcd",bg="#383a39")
 button4.grid(row = 5, column = 3)
