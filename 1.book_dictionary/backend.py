@@ -50,7 +50,7 @@ def delete(id):
     conn_obj = sqlite3.connect("books.db")
     cur_obj = conn_obj.cursor()
     cur_obj.execute("DELETE FROM book "
-                    "WHERE id = ?", (id))
+                    "WHERE id = ?", (id,))
     conn_obj.commit()
     conn_obj.close()
 
@@ -67,22 +67,3 @@ def search(title = "", author = "", year = "", isbn = ""):
     return rows
     
 connect()
-# import pymysql as py
-# from tkinter import *
-# import sqlite3
-# # from frontend import *
-# #----------Taking databse username and password-------------
-# data=open("database_pass.txt","r")
-# username=data.readline() 
-# password=data.readline()
-
-# #---------------open database connection---------------------db = conn_obj
-# db=py.connect("localhost","root",password,"book_dic")      #cursor_obj=cursor
-
-# 	cursor=db.cursor()
-# 	cursor.execute("select * from book")
-# 	row=cursor.fetchall()
-# 	db.close()
-# 	return row
-	
-

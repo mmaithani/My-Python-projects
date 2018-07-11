@@ -8,7 +8,11 @@ def add_command():
                     year_text.get(), 
                     isbn_text.get())
     listing.delete(0, END)
-    listing.insert(END,(title_text.get(),author_text.get(),year_text.get(),isbn_text.get()))
+    listing.insert(END, 
+                    (title_text.get(), 
+                    author_text.get(), 
+                    year_text.get(), 
+                    isbn_text.get()))
 
 def view_command():
     """View entries via button."""
@@ -53,7 +57,7 @@ def get_selected_row(event):
     entry3.insert(END, selected_tuple[3])
 
     entry4.delete(0, END)
-    entry4.insert(END, selected_tuple[4])
+    entry4.insert(END, selected_tuple[4])ss
 
 window = Tk()
 
@@ -107,37 +111,37 @@ listing.bind('<<ListboxSelect>>', get_selected_row)
 button1 = Button(window, 
                 text = "View All", 
                 width = 12, 
-                command = view_command,bg="powder blue")
+                command = view_command)
 button1.grid(row = 2, column = 3)
 
 button2 = Button(window, 
                 text = "Search Entry", 
                 width = 12, 
-                command = search_command,bg="powder blue")
+                command = search_command)
 button2.grid(row = 3, column = 3)
 
 button3 = Button(window, 
                 text = "Add Entry", 
                 width = 12, 
-                command = add_command,bg="powder blue")
+                command = add_command)
 button3.grid(row = 4, column = 3)
 
 button4 = Button(window, 
                 text = "Update Selected", 
                 width = 12, 
-                command = update_command,bg="powder blue")
+                command = update_command)
 button4.grid(row = 5, column = 3)
 
 button5 = Button(window, 
                 text = "Delete Selected", 
                 width = 12, 
-                command = delete_command,bg="powder blue")
+                command = delete_command)
 button5.grid(row = 6, column = 3)
 
 button6 = Button(window, 
                 text = "Close", 
                 width = 12, 
-                command = window.destroy,bg="powder blue")
+                command = window.destroy)
 button6.grid(row = 7, column = 3)
 
 # Keep window open until closed.
