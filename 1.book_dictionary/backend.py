@@ -50,7 +50,7 @@ def delete(id):
     conn_obj = sqlite3.connect("books.db")
     cur_obj = conn_obj.cursor()
     cur_obj.execute("DELETE FROM book "
-                    "WHERE id = ?", (id,))
+                    "WHERE id = ?", (id))
     conn_obj.commit()
     conn_obj.close()
 
@@ -79,12 +79,6 @@ connect()
 # #---------------open database connection---------------------db = conn_obj
 # db=py.connect("localhost","root",password,"book_dic")      #cursor_obj=cursor
 
-# #--------prepare a cursor object using cursor() method----------
-# cursor=db.cursor()
-	
-# #########################- Button commands -################################################
-# def view_alll():
-# 	db=sqlite3.connect("book_dic")
 # 	cursor=db.cursor()
 # 	cursor.execute("select * from book")
 # 	row=cursor.fetchall()
@@ -92,7 +86,3 @@ connect()
 # 	return row
 	
 
-# # def add():
-# # 	cursor.execute("insert into book (title,year,ISBN,author)values( 'title_entry.get()','year_entry.get()','isbn_entry.get()','author_entry.get()')
-# # 	db.commit()
-# # 	cursor.execute("insert into book(title,year,ISBN,author)values('dfj','65','5','eee')")

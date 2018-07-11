@@ -45,22 +45,22 @@ def search_command():
         listing.insert(END, row)
 
 def get_selected_row(event):
-    """Pre-fill fields for selected entry."""
+    """ selected entry."""
     global selected_tuple
     index = listing.curselection()[0]
     selected_tuple = listing.get(index)
 
-    entry1.delete(0, END)
-    entry1.insert(END, selected_tuple[1])
+    title_text.delete(0, END)
+    title_text.insert(END, selected_tuple[1])
 
-    entry2.delete(0, END)
-    entry2.insert(END, selected_tuple[2])
+    author_text.delete(0, END)
+    author_text.insert(END, selected_tuple[2])
 
-    entry3.delete(0, END)
-    entry3.insert(END, selected_tuple[3])
+    isbn_text.delete(0, END)
+    isbn_text.insert(END, selected_tuple[3])
 
-    entry4.delete(0, END)
-    entry4.insert(END, selected_tuple[4])
+    year_text.delete(0, END)
+    year_text.insert(END, selected_tuple[4])
 #---------------------------------------------------------------------
 # def view_all():
 # 	# for row in backend.view_alll():
@@ -127,7 +127,6 @@ isbn_text.grid(row=1,column=4)
 listing = Listbox(downframe,height = 16, width = 35)
 listing.grid(row=4,column=3)
 
-# Scrollbar
 scroller = Scrollbar(window)
 scroller.grid(row=4,column =3)
 
