@@ -2,7 +2,7 @@ from tkinter import *
 import backend
 import os
 from PIL import ImageTk,Image
-
+from tkinter import messagebox
 #window configuration
 window = Tk()
 
@@ -44,7 +44,7 @@ def view_command():
 
 def update_command():
     """Update entry via button."""
-    global selected_tuple
+    # global selected_tuple
     backend.update(selected_tuple[0], 
                     title_text.get(), 
                     author_text.get(), 
@@ -64,25 +64,29 @@ def search_command():
                                 year_text.get(), 
                                 isbn_text.get()):
         listing.insert(END, row)
-
+def close():
+    result=messagebox.askyesno('Exit confirmation','Are you want to Exit')
+    if result==True:
+        sys.exit()
+    else:
+        pass
 def get_selected_row(event):
     """Pre-fill fields for selected entry."""
     global selected_tuple
-    print("cp1")
     index = listing.curselection()[0]
     selected_tuple = listing.get(index)
-    print(type(selected_tuple))
+
     entry1.delete(0, END)
     entry1.insert(END, selected_tuple[1])
 
-    entry2.delete(0,END)
+    entry2.delete(0, END)
     entry2.insert(END, selected_tuple[2])
 
-    entry3.delete(0,END)
+    entry3.delete(0, END)
     entry3.insert(END, selected_tuple[3])
 
-    entry4.delete(0,END)
-    entry4.insert(END,selected_tuple[4])
+    entry4.delete(0, END)
+    entry4.insert(END, selected_tuple[4])
 
 
 # root = Tk()
@@ -166,7 +170,7 @@ button5.place(x=370,y=300)
 button6 = Button(window, 
                 text = "Close", 
                 width = 12, 
-                command = window.destroy,fg="#a1dbcd",bg="#383a39")
+                command = close,fg="#a1dbcd",bg="#383a39")
 button6.place(x=370,y=325)
 
 import webbrowser
