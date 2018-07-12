@@ -193,13 +193,13 @@ link2 = Label(window, text="Github project link", fg="blue",bg="#a1dbcd", cursor
 link2.place(x=0,y=430)
 link2.bind("<Button-1>", callback2)
 
-profile = ImageTk.PhotoImage(Image.open("github_profile_pic.gif"))
+profile = ImageTk.PhotoImage(Image.open("github_profile_pic.png"))
 panel = Label(window, image =profile)
 panel.place(x=10,y=360)
 #---------------------------------------------------------------------------------------
 instagram= ImageTk.PhotoImage(Image.open("insta.png"))
 panel = Label(window, image =instagram)
-panel.place(x=110,y=360)
+panel.place(x=110,y=365)
 
 link2 = Label(window, text="Instagram", fg="blue",bg="#a1dbcd", cursor="hand2")
 link2.place(x=110,y=410)
@@ -208,7 +208,7 @@ link2.bind("<Button-1>", insta)
 
 tweet= ImageTk.PhotoImage(Image.open("twitter.png"))
 panel = Label(window, image =tweet)
-panel.place(x=180,y=360)
+panel.place(x=180,y=362)
 
 link2 = Label(window, text="Twitter", fg="blue",bg="#a1dbcd", cursor="hand2")
 link2.place(x=180,y=410)
