@@ -17,7 +17,9 @@ To delete an entry, click the View **All button**, then click on the entry to de
 cd 1.book dictionary
 python FRONTend(open.PY
 </pre></i></n>
-![capture](https://user-images.githubusercontent.com/32105561/42621287-05d118d4-85db-11e8-9e18-1e16767f6f98.JPG)
+
+![capture](https://user-images.githubusercontent.com/32105561/42627824-c542a1c8-85eb-11e8-87ad-6394cc7b03f5.JPG)
+<img src="Capture.JPG" title="capture">
 ## from 
 <img src="https://www.spreadshirt.co.uk/image-server/v1/mp/designs/144827034,width=150,height=100/pride-flag-flag-home-origin-india-png.png" title="India"> made in <img src="https://developer.ibm.com/predictiveanalytics/wp-content/uploads/sites/48/2015/04/python-icon.png" title="Python"> with <img src="http://cdn0.bodas.com.mx/img/smileys/smiley_heart.png" title="Love"> by <font color="red">Mohit </font> Maithani,
 follow on [instagram](https://www.instagram.com/aee_nobody)![banner](https://user-images.githubusercontent.com/32105561/42618164-d27b3be4-85d1-11e8-808e-6504d2931d0c.png)
