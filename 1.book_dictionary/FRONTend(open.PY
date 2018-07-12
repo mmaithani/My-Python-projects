@@ -151,19 +151,19 @@ button4 = Button(window,
                 text="Update", 
                 width = 12, 
                 command = update_command,fg="#a1dbcd",bg="#383a39")
-button4.place(x=370,y=250)
+button4.place(x=370,y=275)
 
 button5 = Button(window, 
                 text = "Delete Selected", 
                 width = 12, 
                 command = delete_command,fg="#a1dbcd",bg="#383a39")
-button5.place(x=370,y=275)
+button5.place(x=370,y=300)
 
 button6 = Button(window, 
                 text = "Close", 
                 width = 12, 
                 command = window.destroy,fg="#a1dbcd",bg="#383a39")
-button6.place(x=370,y=310)
+button6.place(x=370,y=325)
 import webbrowser
 
 def callback(event):
