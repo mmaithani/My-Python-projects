@@ -21,6 +21,7 @@ window.wm_title("Book Directory")
 window.configure(background="",bg="#a1dbcd")
 window.wm_iconbitmap('icon.ico')
 
+global selected_tuple
 
 def add_command():
     """Insert entry via button."""
@@ -43,6 +44,7 @@ def view_command():
 
 def update_command():
     """Update entry via button."""
+    global selected_tuple
     backend.update(selected_tuple[0], 
                     title_text.get(), 
                     author_text.get(), 
@@ -51,6 +53,7 @@ def update_command():
 
 def delete_command():
     """Delete entry via button."""
+    global selected_tuple
     backend.delete(selected_tuple[0])
 
 def search_command():
@@ -65,9 +68,10 @@ def search_command():
 def get_selected_row(event):
     """Pre-fill fields for selected entry."""
     global selected_tuple
+    print("cp1")
     index = listing.curselection()[0]
     selected_tuple = listing.get(index)
-
+    print(type(selected_tuple))
     entry1.delete(0, END)
     entry1.insert(END, selected_tuple[1])
 
@@ -147,7 +151,7 @@ button3 = Button(window,
                 command = add_command,fg="#a1dbcd",bg="#383a39")
 button3.place(x=370,y=250)
 
-button4 = Button(window,
+button4=Button(window,
                 text="Update", 
                 width = 12, 
                 command = update_command,fg="#a1dbcd",bg="#383a39")
@@ -164,6 +168,7 @@ button6 = Button(window,
                 width = 12, 
                 command = window.destroy,fg="#a1dbcd",bg="#383a39")
 button6.place(x=370,y=325)
+
 import webbrowser
 
 def callback(event):
@@ -180,33 +185,33 @@ img = ImageTk.PhotoImage(Image.open("banner.gif"))
 panel = Label(window, image = img)
 panel.grid(row=0,column=0)
 ###############################################################################################
-link = Label(window, text="Github profile",fg='blue', cursor="hand2")
-link.place(x=0,y=420)
+link = Label(window, text="Github profile",fg='blue',bg="#a1dbcd", cursor="hand2")
+link.place(x=0,y=412)
 link.bind("<Button-1>", callback)
 
-link2 = Label(window, text="Github project link", fg="blue", cursor="hand2")
-link2.place(x=0,y=440)
+link2 = Label(window, text="Github project link", fg="blue",bg="#a1dbcd", cursor="hand2")
+link2.place(x=0,y=430)
 link2.bind("<Button-1>", callback2)
 
 profile = ImageTk.PhotoImage(Image.open("github_profile_pic.gif"))
 panel = Label(window, image =profile)
 panel.place(x=10,y=360)
 #---------------------------------------------------------------------------------------
-instagram= ImageTk.PhotoImage(Image.open("insta.gif"))
+instagram= ImageTk.PhotoImage(Image.open("insta.png"))
 panel = Label(window, image =instagram)
 panel.place(x=110,y=360)
 
-link2 = Label(window, text="Instagram", fg="blue", cursor="hand2")
-link2.place(x=110,y=420)
+link2 = Label(window, text="Instagram", fg="blue",bg="#a1dbcd", cursor="hand2")
+link2.place(x=110,y=410)
 link2.bind("<Button-1>", insta)
 #--------------------------------------------------------------------------------------------------
 
-tweet= ImageTk.PhotoImage(Image.open("twitter.gif"))
+tweet= ImageTk.PhotoImage(Image.open("twitter.png"))
 panel = Label(window, image =tweet)
 panel.place(x=180,y=360)
 
-link2 = Label(window, text="Twitter", fg="blue", cursor="hand2")
-link2.place(x=180,y=420)
+link2 = Label(window, text="Twitter", fg="blue",bg="#a1dbcd", cursor="hand2")
+link2.place(x=180,y=410)
 link2.bind("<Button-1>", twitter)
 #--------------------------------
 
