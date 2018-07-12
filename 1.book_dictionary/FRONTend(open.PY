@@ -1,8 +1,27 @@
 from tkinter import *
 import backend
-# import tkMessageBox
-# import tkFont
+import os
 from PIL import ImageTk,Image
+
+#window configuration
+window = Tk()
+
+# C=Canvas(window, bg="blue", height=250, width=300)
+# filename=PhotoImage(file="background.png")
+# background_label=Label(top,image=filename)
+# background_label.place(x=0, y=0,relwidth=1,relheight=1)
+
+# C.place()
+# back=PhotoImage('background.gif')
+# back_label=Label(window,image=back)
+# back_label.place(x=0,y=0)
+
+window.geometry("500x470")
+window.wm_title("Book Directory")
+window.configure(background="",bg="#a1dbcd")
+window.wm_iconbitmap('icon.ico')
+
+
 def add_command():
     """Insert entry via button."""
     backend.insert(title_text.get(),
@@ -52,27 +71,15 @@ def get_selected_row(event):
     entry1.delete(0, END)
     entry1.insert(END, selected_tuple[1])
 
-    entry2.delete(0, END)
+    entry2.delete(0,END)
     entry2.insert(END, selected_tuple[2])
 
-    entry3.delete(0, END)
+    entry3.delete(0,END)
     entry3.insert(END, selected_tuple[3])
 
-    entry4.delete(0, END)
-    entry4.insert(END, selected_tuple[4])
+    entry4.delete(0,END)
+    entry4.insert(END,selected_tuple[4])
 
-#window configuration
-window = Tk()
-image2 =Image.open('twitter.gif')
-image1 = ImageTk.PhotoImage(image2)
-w = image1.width()
-h = image1.height()
-window.geometry("500x470")
-window.wm_title("Book Directory")
-window.configure(background="")
-window.wm_iconbitmap('icon.ico')
-from PIL import ImageTk, Image
-import os
 
 # root = Tk()
 
@@ -110,18 +117,17 @@ entry4.place(x=370,y=175)
 
 # List all data.
 listing = Listbox(window, height = 16, width = 59)
-listing.grid(row = 1, column = 0)
+listing.grid(row=1,column=0)
 
 # Scrollbar.
 scroller = Scrollbar(window)
-scroller.place(x=340,y=300)
+scroller.place(x=340,y=103,height=257)
 # Configure scrollbar for Listbox.
 listing.configure(yscrollcommand = scroller.set)
 scroller.configure(command = listing.yview)
-scroller.set(2000,2000)
+# scroller.set(2000,2000)
 
-listing.bind('<<ListboxSelect>>', get_selected_row)
-
+# listing.bind('<<ListboxSelect>>', get_selected_row)
 # Buttons for various operations on data.
 button1 = Button(window, 
                 text = "View All", 
