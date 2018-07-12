@@ -18,5 +18,5 @@ cd 1.book dictionary
 python FRONTend(open.PY
 </pre></i></n>
 
-## from <img src="https://www.spreadshirt.co.uk/image-server/v1/mp/designs/144827034,width=120,height=80/pride-flag-flag-home-origin-india-png.png" title="India"> made in <img src="https://developer.ibm.com/predictiveanalytics/wp-content/uploads/sites/48/2015/04/python-icon.png" title="Python"> with <img src="http://cdn0.bodas.com.mx/img/smileys/smiley_heart.png" title="Love"> by <font color="red">Mohit </font> Maithani
+## from <img src="https://www.spreadshirt.co.uk/image-server/v1/mp/designs/144827034,width=178,height=100/pride-flag-flag-home-origin-india-png.png" title="India"> made in <img src="https://developer.ibm.com/predictiveanalytics/wp-content/uploads/sites/48/2015/04/python-icon.png" title="Python"> with <img src="http://cdn0.bodas.com.mx/img/smileys/smiley_heart.png" title="Love"> by <font color="red">Mohit </font> Maithani
 follow on [instagram](https://www.instagram.com/aee_nobody)![banner](https://user-images.githubusercontent.com/32105561/42618164-d27b3be4-85d1-11e8-808e-6504d2931d0c.png)
