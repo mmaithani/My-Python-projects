@@ -30,7 +30,6 @@ def view():
     rows = cur_obj.fetchall()
     conn_obj.close()
     return rows
-    cur_obj.executive("drop table book")
 
 def update(id, title, author, year, isbn):
     """Update a database entry."""

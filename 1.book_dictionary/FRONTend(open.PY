@@ -5,17 +5,6 @@ from PIL import ImageTk,Image
 from tkinter import messagebox
 #window configuration
 window = Tk()
-
-# C=Canvas(window, bg="blue", height=250, width=300)
-# filename=PhotoImage(file="background.png")
-# background_label=Label(top,image=filename)
-# background_label.place(x=0, y=0,relwidth=1,relheight=1)
-
-# C.place()
-# back=PhotoImage('background.gif')
-# back_label=Label(window,image=back)
-# back_label.place(x=0,y=0)
-
 window.geometry("500x470")
 window.wm_title("Book Directory")
 window.configure(background="",bg="#a1dbcd")
@@ -89,11 +78,7 @@ def get_selected_row(event):
     entry4.insert(END, selected_tuple[4])
 
 
-# root = Tk()
 
-# photo=PhotoImage(file="banner.gif")
-# w=Label(window,image=photo)
-# w.grid(row=6,column=0)
 # Labels for entry fields.
 label1 = Label(window, text = "Title",fg="#383a39",bg="#a1dbcd",font=("Helvetica",16))
 label1.place(x=400,y=0)
@@ -123,19 +108,20 @@ isbn_text = StringVar()
 entry4 = Entry(window, textvariable = isbn_text)
 entry4.place(x=370,y=175)
 
+
 # List all data.
 listing = Listbox(window, height = 16, width = 59)
 listing.grid(row=1,column=0)
 
+listing.bind('<<ListboxSelect>>', get_selected_row)
 # Scrollbar.
 scroller = Scrollbar(window)
 scroller.place(x=340,y=103,height=257)
 # Configure scrollbar for Listbox.
 listing.configure(yscrollcommand = scroller.set)
 scroller.configure(command = listing.yview)
-# scroller.set(2000,2000)
 
-# listing.bind('<<ListboxSelect>>', get_selected_row)
+listing.bind('<<ListboxSelect>>', get_selected_row)
 # Buttons for various operations on data.
 button1 = Button(window, 
                 text = "View All", 
