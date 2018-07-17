@@ -12,7 +12,7 @@ To update an entry, click the View All button, then click on the entry to update
 To delete an entry, click the View **All button**, then click on the entry to delete and click the Delete Selected button. Lastly, to close the app, click the Close button.
 
 ## Objectives
-###This application contains following objectives:
+### This application contains following objectives:
 ● To create the database for the books using Mysql.
 ● To connect the database to backend.py file and write the functions for
 CRUD operations.
