@@ -1,5 +1,4 @@
 # Book Directory Application
-
 ![banner](https://user-images.githubusercontent.com/32105561/42615832-85b022d2-85c9-11e8-9b92-7a37ed616417.gif)
 
 ## Technology Utillized
@@ -11,6 +10,21 @@ To view all database entries, click the View All button.
 To search if a particular entry exists, type the text to search in its corresponding field and click the Search Entry button. 
 To update an entry, click the View All button, then click on the entry to update, fill in the new fields, and click the Update Selected button.
 To delete an entry, click the View **All button**, then click on the entry to delete and click the Delete Selected button. Lastly, to close the app, click the Close button.
+
+## Objectives
+###This application contains following objectives:
+● To create the database for the books using Mysql.
+● To connect the database to backend.py file and write the functions for
+CRUD operations.
+● To manage the database using backend.py.
+● To connect the GUI with backend and show the data.
+● The following tasks should be performed:
+1. View all entries
+2. Search entries
+3. Delete entries
+4. Add entries
+5. Update selected
+6. Close
 
 # INSTALLATION
 <pre><i><n>git clone https://github.com/mmaithani/My-Python-projects/edit/master/1.book_dictionary
