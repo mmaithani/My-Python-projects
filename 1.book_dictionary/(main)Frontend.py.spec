@@ -4,6 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['(main)Frontend.py.py'],
+             pathex=['E:\\python\\My-Python-projects\\1.book_dictionary'],
              binaries=[],
              datas=[],
              hiddenimports=[],

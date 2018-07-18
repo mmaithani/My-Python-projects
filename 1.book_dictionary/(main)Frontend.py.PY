@@ -20,7 +20,7 @@ def add_command():
                     isbn_text.get())
     listing.delete(0, END)
     listing.insert(END, 
-                    (title_text.get(), 
+                    (title_text.get(),
                     author_text.get(), 
                     year_text.get(), 
                     isbn_text.get()))
