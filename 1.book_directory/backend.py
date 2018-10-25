@@ -18,7 +18,7 @@ def insert(title, author, year, isbn):
     conn_obj = sqlite3.connect("books.db")
     cur_obj = conn_obj.cursor()
     cur_obj.execute("INSERT INTO book "
-                    "VALUES (NULL, ?, ?, ?, ?)", (title, author, year, isbn))
+                    "VALUES (NULL, ?,?,?,?)", (title, author, year, isbn))
     conn_obj.commit()
     conn_obj.close()
 
@@ -41,7 +41,7 @@ def update(id, title, author, year, isbn):
                     "year = ?, "
                     "isbn = ? "
                     "WHERE id = ?", 
-                    (title, author, year, isbn, id))
+                    (title, author,year, isbn, id))
     conn_obj.commit()
     conn_obj.close()
 
