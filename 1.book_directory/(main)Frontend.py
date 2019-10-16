@@ -5,7 +5,7 @@ from PIL import ImageTk,Image
 from tkinter import messagebox
 #window configuration
 window = Tk()
-window.geometry("500x470")
+window.geometry("500x500")
 window.wm_title("Book Directory")
 window.configure(background="",bg="#a1dbcd")
 window.wm_iconbitmap('icon.ico')
