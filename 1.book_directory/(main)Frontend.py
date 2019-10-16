@@ -171,7 +171,7 @@ def insta(event):
 def twitter(event):
     webbrowser.open_new("https://twitter.com/e9a16bb235e6485?lang=en")
 # root= Tk()
-#--------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------
 img = ImageTk.PhotoImage(Image.open("banner.gif"))
 panel = Label(window, image = img)
 panel.grid(row=0,column=0)
